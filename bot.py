@@ -23,7 +23,7 @@ class Bot(Client):
     def __init__(self):
         super().__init__(
             name="Bot",
-            api_hash=6ddf5d5aa190b0f818e3731a39bd407d,
+            api_hash="6ddf5d5aa190b0f818e3731a39bd407d",
             api_id=8465056,
             plugins={"root": "plugins"},
             workers=5519278195,
