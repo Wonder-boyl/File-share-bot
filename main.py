@@ -1,1 +1,2 @@
-from bot import Bot.__init__('self')
+from bot import Bot
+Bot.__init__('self')
