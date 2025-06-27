@@ -1,3 +1,3 @@
 from bot import Bot
 
-my_bot = Bot('Robo')
+Bot.__init__()
