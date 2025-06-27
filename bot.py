@@ -8,15 +8,15 @@ import sys
 from pyrogram import Client, enums
 
 from config import (
-    6ddf5d5aa190b0f818e3731a39bd407d,
-    8465056,
-    -1002202717422,
-    -1002202717422,
-    -1002551041466,
-    -1002202717422,
-    6893231857,
-    7934086431:AAExbaMy0BfTlzE0WQI805HsVpY9sjakZD0,
-    5519278195,
+    6ddf5d5aa190b0f818e3731a39bd407d
+    8465056
+    -1002202717422
+    -1002202717422
+    -1002551041466
+    -1002202717422
+    6893231857
+    7934086431:AAExbaMy0BfTlzE0WQI805HsVpY9sjakZD0
+    5519278195
 )
 
 
