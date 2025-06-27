@@ -73,7 +73,7 @@ class Bot(Client):
 
         if FORCE_SUB_GROUP:
             try:
-                info = await self.get_chat-1002551041466)
+                info = await self.get_chat(-1002551041466)
                 link = info.invite_link
                 if not link:
                     await self.export_chat_invite_link(-1002551041466)
