@@ -7,28 +7,27 @@ import sys
 
 from pyrogram import Client, enums
 
-from config import (
-    ("API_HASH", "6ddf5d5aa190b0f818e3731a39bd407d")
-    ("API_ID", "8465056")
-    ("CHANNEL_ID", "-1002202717422")
-    ("FORCE_SUB_CHANNEL", "-1002202717422")
-    ("FORCE_SUB_GROUP", "-1002551041466")
-    ("LOGGER", "-1002202717422")
-    ("OWNER", "6893231857")
-    ("TG_BOT_TOKEN", "7934086431:AAExbaMy0BfTlzE0WQI805HsVpY9sjakZD0")
-    ("ADMINS", "5519278195")
+from config import (    
+    API_HASH,
+    APP_ID,
+    CHANNEL_ID,
+    FORCE_SUB_CHANNEL,
+    FORCE_SUB_GROUP,
+    LOGGER,
+    OWNER,
+    TG_BOT_TOKEN,
+    TG_BOT_WORKERS,
 )
-
 
 class Bot(Client):
     def __init__(self):
         super().__init__(
             name="Bot",
-            api_hash=API_HASH,
-            api_id=APP_ID,
+            api_hash=6ddf5d5aa190b0f818e3731a39bd407d,
+            api_id=8465056,
             plugins={"root": "plugins"},
-            workers=TG_BOT_WORKERS,
-            bot_token=TG_BOT_TOKEN,
+            workers=5519278195,
+            bot_token=7934086431:AAExbaMy0BfTlzE0WQI805HsVpY9sjakZD0,
         )
         self.LOGGER = LOGGER
 
@@ -50,10 +49,10 @@ class Bot(Client):
 
         if FORCE_SUB_CHANNEL:
             try:
-                info = await self.get_chat(FORCE_SUB_CHANNEL)
+                info = await self.get_chat(-1002202717422)
                 link = info.invite_link
                 if not link:
-                    await self.export_chat_invite_link(FORCE_SUB_CHANNEL)
+                    await self.export_chat_invite_link(-1002202717422)
                     link = info.invite_link
                 self.invitelink = link
                 self.LOGGER(__name__).info(
@@ -65,7 +64,7 @@ class Bot(Client):
                     "Bot tidak dapat Mengambil link invite dari FORCE_SUB_CHANNEL!"
                 )
                 self.LOGGER(__name__).warning(
-                    f"Pastikan @{self.username} adalah admin di Channel Tersebut, Chat ID F-Subs Channel Saat Ini: {FORCE_SUB_CHANNEL}"
+                    f"Pastikan @{self.username} adalah admin di Channel Tersebut, Chat ID F-Subs Channel Saat Ini: {-1002202717422}"
                 )
                 self.LOGGER(__name__).info(
                     "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
@@ -74,10 +73,10 @@ class Bot(Client):
 
         if FORCE_SUB_GROUP:
             try:
-                info = await self.get_chat(FORCE_SUB_GROUP)
+                info = await self.get_chat-1002551041466)
                 link = info.invite_link
                 if not link:
-                    await self.export_chat_invite_link(FORCE_SUB_GROUP)
+                    await self.export_chat_invite_link(-1002551041466)
                     link = info.invite_link
                 self.invitelink2 = link
                 self.LOGGER(__name__).info(
@@ -89,7 +88,7 @@ class Bot(Client):
                     "Bot tidak dapat Mengambil link invite dari FORCE_SUB_GROUP!"
                 )
                 self.LOGGER(__name__).warning(
-                    f"Pastikan @{self.username} adalah admin di Group Tersebut, Chat ID F-Subs Group Saat Ini: {FORCE_SUB_GROUP}"
+                    f"Pastikan @{self.username} adalah admin di Group Tersebut, Chat ID F-Subs Group Saat Ini: {-1002551041466}"
                 )
                 self.LOGGER(__name__).info(
                     "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
@@ -97,7 +96,7 @@ class Bot(Client):
                 sys.exit()
 
         try:
-            db_channel = await self.get_chat(CHANNEL_ID)
+            db_channel = await self.get_chat(-1002202717422)
             self.db_channel = db_channel
             test = await self.send_message(chat_id=db_channel.id, text="Test Message", disable_notification=True)
             await test.delete()
@@ -107,7 +106,7 @@ class Bot(Client):
         except Exception as e:
             self.LOGGER(__name__).warning(e)
             self.LOGGER(__name__).warning(
-                f"Pastikan @{self.username} adalah admin di Channel DataBase anda, CHANNEL_ID Saat Ini: {CHANNEL_ID}"
+                f"Pastikan @{self.username} adalah admin di Channel DataBase anda, CHANNEL_ID Saat Ini: {-1002202717422}"
             )
             self.LOGGER(__name__).info(
                 "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
@@ -116,7 +115,7 @@ class Bot(Client):
 
         self.set_parse_mode(enums.ParseMode.HTML)
         self.LOGGER(__name__).info(
-            f"[🔥 BERHASIL DIAKTIFKAN! 🔥]\n\nBOT Dibuat oleh @{OWNER}\nJika @{OWNER} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/SharingUserbot"
+            f"[🔥 BERHASIL DIAKTIFKAN! 🔥]\n\nBOT Dibuat oleh @{6893231857}\nJika @{6893231857} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/SharingUserbot"
         )
 
     async def stop(self, *args):
