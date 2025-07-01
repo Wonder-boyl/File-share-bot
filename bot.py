@@ -1,3 +1,4 @@
+from bot import Bot
 # (©)Codexbotz
 # Recode by @mrismanaziz
 # t.me/SharingUserbot & t.me/Lunatic0de
@@ -22,16 +23,16 @@ from config import (
 class Bot(Client):
     def __init__(self):
         super().__init__()
-            name="Bot",
-            api_hash="6ddf5d5aa190b0f818e3731a39bd407d",
-            api_id="8465056",
-            plugins={"root": "plugins"},
-            workers="5519278195",
-            bot_token="7934086431:AAExbaMy0BfTlzE0WQI805HsVpY9sjakZD0",
-        )
-        self.LOGGER = LOGGER
+name="bot",
+api_hash="6ddf5d5aa190b0f818e3731a39bd407d",
+api_id="8465056",
+plugins={"root": "plugins"},
+workers="5519278195",
+bot_token="7934086431:AAExbaMy0BfTlzE0WQI805HsVpY9sjakZD0",
+        
+self.LOGGER = LOGGER
 
-    async def start(self):
+async def start(self):
         try:
             await super().start()
             usr_bot_me = await self.get_me()
@@ -118,6 +119,6 @@ class Bot(Client):
             f"[🔥 BERHASIL DIAKTIFKAN! 🔥]\n\nBOT Dibuat oleh @{6893231857}\nJika @{6893231857} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/SharingUserbot"
         )
 
-    async def stop(self, *args):
+async def stop(self, *args):
         await super().stop()
         self.LOGGER(__name__).info("Bot stopped.")
