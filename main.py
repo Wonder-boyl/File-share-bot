@@ -119,6 +119,6 @@ async def start(self):
             f"[🔥 BERHASIL DIAKTIFKAN! 🔥]\n\nBOT Dibuat oleh @{6893231857}\nJika @{6893231857} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/SharingUserbot"
         )
 
-    async def stop(self, *args):
+async def stop(self, *args):
         await super().stop()
         self.LOGGER(__name__).info("Bot stopped.")
