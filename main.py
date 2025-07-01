@@ -29,8 +29,6 @@ api_id="8465056",
 plugins={"root": "plugins"},
 workers="5519278195",
 bot_token="7934086431:AAExbaMy0BfTlzE0WQI805HsVpY9sjakZD0",
-        
-self.LOGGER = start
 
 async def start(self):
         try:
