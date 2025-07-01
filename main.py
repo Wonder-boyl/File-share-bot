@@ -32,7 +32,7 @@ bot_token="7934086431:AAExbaMy0BfTlzE0WQI805HsVpY9sjakZD0",
         
 self.LOGGER = LOGGER
 
-    async def start(self):
+async def start(self):
         try:
             await super().start()
             usr_bot_me = await self.get_me()
